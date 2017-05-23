@@ -13,20 +13,7 @@
             <button ng-click="helloCtrl.sayHi()" >CLICK ME </button>
         </div>
     </section>
-    <script>
-        angular.module('hello', [])
-            .controller("HelloController", function(){
-                var hello = this;
-                hello.name = " Hi!";
-
-                /*hello.sayHi = function(){
-
-                }*/
-                hello.sayHi = () => {
-                    alert("Hey!! sup " + hello.name );
-                }
-            } )
-    </script>
+    <script src="app.js"></script>
 
 </body>
 </html>
