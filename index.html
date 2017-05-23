@@ -68,14 +68,15 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in helloCtrl.users | orderBy:'age':-1" >
+                    <tr ng-repeat="item in helloCtrl.users  track by $index " >
                         <td><img src="{{item.picture}}" style="max-width: 100px;" /></td>
                         <td>{{item.name}}</td>
                         <td>{{item.age}}</td>
                         <td>{{item.salary | number}}</td>
                         <td>
-                            <button class="btn btn-danger" ng-click="helloCtrl.isSenior(item)" >isSenior?</button>
+                            <button class="btn " ng-click="helloCtrl.isSenior(item)" >isSenior?</button>
                             <button class="btn btn-success" ng-click="helloCtrl.edit(item)" >Edit</button>
+                            <button class="btn btn-danger" ng-click="helloCtrl.delete($index)" >DELETE</button>
                         </td>
                     </tr>
                 </tbody>

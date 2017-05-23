@@ -59,5 +59,12 @@
                     
                 }
 
+                hello.delete = index => {
+                    if(confirm("Going to delete " + hello.users[index].name + " ?")){
+                        hello.users.splice(index, 1)
+                    }
+                    
+                }
+
 
             } )
