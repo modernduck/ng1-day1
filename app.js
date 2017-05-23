@@ -16,4 +16,15 @@
                 hello.sayHi = () => {
                     alert("Hey!! sup " + hello.name );
                 }
+
+                /*hello.isSenior = function( user ) {
+                }*/
+                hello.isSenior = user => {
+                    if(user.age >35)
+                        alert(user.name +  " is Senior");
+                    else
+                        alert(user.name + " is not senior");
+                }
+
+
             } )
