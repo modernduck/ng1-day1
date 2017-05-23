@@ -2,6 +2,7 @@
 <html ng-app="hello" >
 <head>
     <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css"/>
 </head>
 <body >
     <section ng-controller="HelloController as helloCtrl">
@@ -12,7 +13,7 @@
         <div>
             <button ng-click="helloCtrl.sayHi()" >CLICK ME </button>
         </div>
-        <table> 
+        <table class="table table-stiped"> 
             <thead>
                 <th>Picture</th>
                 <th>Name</th>
