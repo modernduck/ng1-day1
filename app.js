@@ -3,12 +3,17 @@
                 var hello = this;
                 hello.name = " Hi!";
                 hello.users = [
-                    {"picture":"http://placehold.it/100x100", "name":"Sompop", "age":29 },
-                    {"picture":"http://placehold.it/100x100", "name":"Zulu", "age":18 },
-                    {"picture":"http://placehold.it/100x100", "name":"Bazoo", "age":67 },
-                    {"picture":"http://placehold.it/100x100", "name":"Mocca", "age":39 },
-                    {"picture":"http://placehold.it/100x100", "name":"Angular", "age":45 }
+                    {"picture":"http://placehold.it/100x100", "name":"Sompop", "age":29, "salary":25000 },
+                    {"picture":"http://placehold.it/100x100", "name":"Zulu", "age":18, "salary":90000 },
+                    {"picture":"http://placehold.it/100x100", "name":"Bazoo", "age":67, "salary":10800 },
+                    {"picture":"http://placehold.it/100x100", "name":"Mocca", "age":39, "salary":5000 },
+                    {"picture":"http://placehold.it/100x100", "name":"Angular", "age":45, "salary":999888 }
                 ]
+
+                hello.convertToStringNumber = number => {
+                    //some logic fancy hoo hoo hoo
+                    return "00"
+                }
 
                 /*hello.sayHi = function(){
 
