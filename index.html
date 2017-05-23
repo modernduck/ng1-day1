@@ -6,32 +6,33 @@
 </head>
 <body >
     <section ng-controller="HelloController as helloCtrl">
-        <div>
-            <input type="text" ng-model="helloCtrl.name" />
+        <div ng-show="!helloCtrl.isShowEmployee">
+            <h2>Home</h2>
+            <button class="btn btn-primary" ng-click="helloCtrl.isShowEmployee = true" >List of Employees</button>
         </div>
-        <h1>Hello {{helloCtrl.name}}</h1>
-        <div>
-            <button ng-click="helloCtrl.sayHi()" >CLICK ME </button>
-        </div>
-        <table class="table table-stiped"> 
-            <thead>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Salary</th>
-                <th>Action</th>
-            </thead>
-            <tbody>
-                <tr ng-repeat="item in helloCtrl.users | orderBy:'age':-1" >
-                    <td><img src="{{item.picture}}" /></td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.age}}</td>
-                    <td>{{item.salary | number}}</td>
-                    <td><button class="btn btn-danger" ng-click="helloCtrl.isSenior(item)" >isSenior?</button></td>
-                </tr>
-            </tbody>
+        <div ng-show="helloCtrl.isShowEmployee" >
+            <h2>Display Employee Section</h2>
+            <button class="btn btn-primary" ng-click="helloCtrl.isShowEmployee = false" >Back</button>
+            <table class="table table-stiped"> 
+                <thead>
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in helloCtrl.users | orderBy:'age':-1" >
+                        <td><img src="{{item.picture}}" /></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.age}}</td>
+                        <td>{{item.salary | number}}</td>
+                        <td><button class="btn btn-danger" ng-click="helloCtrl.isSenior(item)" >isSenior?</button></td>
+                    </tr>
+                </tbody>
 
-        </table>
+            </table>
+        </div>
     </section>
     <script src="app.js"></script>
 

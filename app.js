@@ -2,6 +2,7 @@
             .controller("HelloController", function(){
                 var hello = this;
                 hello.name = " Hi!";
+                hello.isShowEmployee = false;
                 hello.users = [
                     {"picture":"http://placehold.it/100x100", "name":"Sompop", "age":29, "salary":25000 },
                     {"picture":"http://placehold.it/100x100", "name":"Zulu", "age":18, "salary":90000 },
