@@ -13,7 +13,7 @@
                 ]
 
                 hello.save = () => {
-                    hello.users.push(newUser);
+                    hello.users.push(hello.newUser);
                     hello.isShowEmployee = true;//change the page;
                 }
 
