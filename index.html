@@ -6,9 +6,13 @@
 </head>
 <body >
     <section ng-controller="HelloController as helloCtrl">
-        <div ng-show="!helloCtrl.isShowEmployee">
+        <div ng-show="helloCtrl.page == 'form'">
+            <button class="btn btn-primary" ng-click="helloCtrl.page = 'display'" >Back</button>
+            <h2>Form Page</h2>
+        </div>
+        <div ng-show="helloCtrl.page == 'home'">
             <h2>Home</h2>
-            <button class="btn btn-primary" ng-click="helloCtrl.isShowEmployee = true" >List of Employees</button>
+            <button class="btn btn-primary" ng-click="helloCtrl.page = 'display'" >List of Employees</button>
 
             <h3>Create an Employee</h3>
             <div>
@@ -33,9 +37,9 @@
 
 
         </div>
-        <div ng-show="helloCtrl.isShowEmployee" >
+        <div ng-show="helloCtrl.page == 'display'" >
             <h2>Display Employee Section</h2>
-            <button class="btn btn-primary" ng-click="helloCtrl.isShowEmployee = false" >Back</button>
+            <button class="btn btn-primary" ng-click="helloCtrl.page = 'home'" >Back</button>
             <table class="table table-stiped"> 
                 <thead>
                     <th>Picture</th>
@@ -46,11 +50,14 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in helloCtrl.users | orderBy:'age':-1" >
-                        <td><img src="{{item.picture}}" /></td>
+                        <td><img src="{{item.picture}}" style="max-width: 100px;" /></td>
                         <td>{{item.name}}</td>
                         <td>{{item.age}}</td>
                         <td>{{item.salary | number}}</td>
-                        <td><button class="btn btn-danger" ng-click="helloCtrl.isSenior(item)" >isSenior?</button></td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="helloCtrl.isSenior(item)" >isSenior?</button>
+                            <button class="btn btn-success" ng-click="helloCtrl.edit(item)" >Edit</button>
+                        </td>
                     </tr>
                 </tbody>
 

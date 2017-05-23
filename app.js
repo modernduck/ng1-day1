@@ -2,7 +2,8 @@
             .controller("HelloController", function(){
                 var hello = this;
                 hello.name = " Hi!";
-                hello.isShowEmployee = false;
+                //hello.isShowEmployee = false;
+                hello.page = 'home';
                 hello.newUser = {};
                 hello.users = [
                     {"picture":"http://placehold.it/100x100", "name":"Sompop", "age":29, "salary":25000 },
@@ -36,6 +37,10 @@
                         alert(user.name +  " is Senior");
                     else
                         alert(user.name + " is not senior");
+                }
+
+                hello.edit = user => {
+                    hello.page = 'form';
                 }
 
 
