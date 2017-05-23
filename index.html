@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="hello" >
+<head>
+    <script src="angular.min.js"></script>
+</head>
+<body >
+    <section ng-controller="HelloController as helloCtrl">
+        <div>
+            <input type="text" ng-model="helloCtrl.name" />
+        </div>
+        <div>
+            <input type="text" ng-model="helloCtrl.name" />
+        </div>
+        <div>
+            <input type="text" ng-model="helloCtrl.name" />
+        </div>
+        <h1>Hello {{helloCtrl.name}}</h1>
+    </section>
+    <script>
+        angular.module('hello', [])
+            .controller("HelloController", function(){
+                var hello = this;
+                hello.name = "Hi!";
+            } )
+    </script>
+
+</body>
+</html>
