@@ -3,6 +3,7 @@
                 var hello = this;
                 hello.name = " Hi!";
                 hello.isShowEmployee = false;
+                hello.newUser = {};
                 hello.users = [
                     {"picture":"http://placehold.it/100x100", "name":"Sompop", "age":29, "salary":25000 },
                     {"picture":"http://placehold.it/100x100", "name":"Zulu", "age":18, "salary":90000 },
@@ -10,6 +11,11 @@
                     {"picture":"http://placehold.it/100x100", "name":"Mocca", "age":39, "salary":5000 },
                     {"picture":"http://placehold.it/100x100", "name":"Angular", "age":45, "salary":999888 }
                 ]
+
+                hello.save = () => {
+                    hello.users.push(newUser);
+                    hello.isShowEmployee = true;//change the page;
+                }
 
                 hello.convertToStringNumber = number => {
                     //some logic fancy hoo hoo hoo
