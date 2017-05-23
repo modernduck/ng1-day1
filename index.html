@@ -12,6 +12,21 @@
         <div>
             <button ng-click="helloCtrl.sayHi()" >CLICK ME </button>
         </div>
+        <table> 
+            <thead>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in helloCtrl.users" >
+                    <td><img src="{{item.picture}}" /></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                </tr>
+            </tbody>
+
+        </table>
     </section>
     <script src="app.js"></script>
 
